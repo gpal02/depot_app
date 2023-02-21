@@ -44,6 +44,7 @@ class ProductsController < ApplicationController
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
+        @product.broadcast_replace_later_to 'products', partial: 'store/product'
       end
     end
   end
