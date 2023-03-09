@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     resources :carts
     root 'store#index', as: 'store_index', via: :all
   end
+
+  # resources :checkout, only: [ :create ]
+  post "checkout/create", to: "checkout#create"
+  get "checkout/create", to: "checkout#create"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

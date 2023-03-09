@@ -19,6 +19,7 @@ class Order < ApplicationRecord
     line_items << item
     end
   end
+
   def charge!(pay_type_params)
     payment_details = {}
     payment_method = nil
@@ -51,4 +52,5 @@ class Order < ApplicationRecord
       raise payment_result.error
     end
   end
+  
 end

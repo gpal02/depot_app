@@ -30,7 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  
   layouts:
     application:
       title: "The Pragmatic Bookshelf"
@@ -39,9 +38,9 @@ en:
       news: "News" 
       contact: "Contact"
 
-en:
-  store:
-    index:
-      title_html: "Your Pragmatic Catalog"
-    product: 
-      add_html: "Add to Cart"
+# en:
+#   store:
+#     index:
+#       title_html: "Your Pragmatic Catalog"
+#     product: 
+#       add_html: "Add to Cart"

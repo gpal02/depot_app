@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
   before_action :set_i18n_locale_from_params
   before_action :authorize
 
+  before_action :set_secret_key
+
+  private
+  def set_secret_key
+    Stripe.api_key = Rails.application.credentials[:stripe][:secret]
+  end
+
   protected
   def authorize
     unless User.find_by(id: session[:user_id])
@@ -12,12 +19,11 @@ class ApplicationController < ActionController::Base
   def set_i18n_locale_from_params
     if params[:locale]
       if I18n.available_locales.map(&:to_s).include?(params[:locale])
-      I18n.locale = params[:locale]
-    else
-      flash.now[:notice] =
-      "#{params[:locale]} translation not available"
-      logger.error flash.now[:notice]
-    end
+        I18n.locale = params[:locale]
+      else
+        flash.now[:notice] = " #{params[:locale]} translation not available "
+        logger.error flash.now[:notice]
+      end
     end
   end
 end

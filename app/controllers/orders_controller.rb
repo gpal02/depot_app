@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
+    # debugger
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
 
@@ -32,10 +33,12 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
-        # OrderMailer.received(@order).deliver_later
-        format.html { redirect_to store_index_url, notice: 'Thank you for your order.' }
+        # ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
+        OrderMailer.received(@order).deliver_now
+        # OrderMailer.shipped(@order).deliver_now
+        format.html { redirect_to checkout_create_url, notice: 'Thank you for your order.' }
         format.json { render :show, status: :created, location: @order }
+        
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -86,7 +89,7 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:name, :address, :email, :pay_type, :mobile)
     end
 
     def ensure_cart_isnt_empty

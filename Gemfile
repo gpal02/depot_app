@@ -74,3 +74,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# payment gem
+gem 'stripe'
+
+#sending emails
+gem 'sendgrid-ruby'

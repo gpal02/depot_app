@@ -171,11 +171,14 @@ GEM
     reline (0.3.2)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby_http_client (3.5.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.8.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sendgrid-ruby (6.6.2)
+      ruby_http_client (~> 3.4)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -186,6 +189,7 @@ GEM
     sqlite3 (1.6.0-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    stripe (8.3.0)
     tailwindcss-rails (2.0.23-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -228,9 +232,11 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   redis (~> 4.0)
   selenium-webdriver
+  sendgrid-ruby
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  stripe
   tailwindcss-rails
   turbo-rails
   tzinfo-data
