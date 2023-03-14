@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
         # ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
         OrderMailer.received(@order).deliver_now
         # OrderMailer.shipped(@order).deliver_now
-        format.html { redirect_to checkout_create_url, notice: 'Thank you for your order.' }
+        format.html { redirect_to checkout_create_url(locale: I18n.locale), notice: I18n.t('.thanks') }
         format.json { render :show, status: :created, location: @order }
         
       else

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_05_180551) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_14_053413) do
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
@@ -84,6 +84,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_180551) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "reviewer"
+    t.text "review"
+    t.integer "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+  end
+
   create_table "support_requests", force: :cascade do |t|
     t.string "email"
     t.string "subject"
@@ -106,5 +115,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_180551) do
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
+  add_foreign_key "reviews", "products"
   add_foreign_key "support_requests", "orders"
 end

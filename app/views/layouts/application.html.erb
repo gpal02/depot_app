@@ -9,19 +9,22 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+       
     <script src="https://sdk.cashfree.com/js/ui/2.0.0/cashfree.sandbox.js"></script>
   </head>
 
   <body>
-    <header class="bg-green-700">
+    <header class="flex justify-between bg-green-700">
+      <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+      <h1><%= @page_title %></h1>
       <aside data-controller="locale">
         <%= form_tag store_index_path, class: 'locale' do %>
-          <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
+          <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()', class: "bg-transparent rounded-lg" %>
           <%= submit_tag 'submit', data: {'locale-target' => 'submit'} %>
         <% end %>
       </aside>
-      <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
-      <h1><%= @page_title %></h1>
     </header>
     <section class="flex">
     <nav class="bg-green-900 p-6">
@@ -29,7 +32,10 @@
       <%= render partial: 'layouts/cart', locals: {cart: @cart } %>
 
       <ul class="text-gray-300 leading-8">
-        <li><a href="/">Home  </a></li>
+        <li><a href="/"><%= t('.home') %></a></li>
+        <li><a href="/store/questions"><%= t('.questions') %></a></li>
+        <li><a href="/store/news"><%= t('.news') %></a></li>
+        <li><a href="/store/contact"><%= t('.contact') %></a></li>
       </ul>
 
       <% if session[:user_id] %>

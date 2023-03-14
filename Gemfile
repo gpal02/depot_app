@@ -80,3 +80,9 @@ gem 'stripe'
 
 #sending emails
 gem 'sendgrid-ruby'
+
+# pagination gem
+gem 'kaminari'
+
+# searching gem 
+gem 'ransack'

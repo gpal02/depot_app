@@ -5,6 +5,7 @@ require 'openssl'
 class CheckoutController  < ApplicationController
   def create
     # debugger
+    # @product = id
     @order = Order.last
     url = URI("https://sandbox.cashfree.com/pg/orders")
 

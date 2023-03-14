@@ -1,0 +1,78 @@
+hi:
+
+  layouts:
+    application:
+      title: "ऑनलाइन किताब की दुकान"
+      home: "घर"
+      questions: "प्रशन"
+      news: "समाचार"
+      contact: "संपर्क"
+    
+  store:
+    index:
+      title_html: "आपका व्यावहारिक कैटलॉग"
+    product:
+      add_html: "कार्ट में जोड़ें"
+
+  carts:
+    cart:
+      title: "आपकी शॉपिंग कार्ट"
+      empty: "कार्ट खाली करें"
+      checkout: "चेक आउट"
+
+  number:
+    currency:
+      format:
+        unit: "₹"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format: "%n&nbsp;%u"
+
+  orders:
+    new:
+      legend: "कृपया अपना विवरण दर्ज करें"
+    form:
+      name: "नाम"
+      address_html: "पता"
+      email: "ईमेल"
+      mobile: "मोबाइल नंबर"
+      pay_type: "भुगतान प्रकार"
+      pay_prompt_html: "कोई भुगतान विधि चुनें"
+      submit: "अनुरोध के लिए भेजें"
+      pay_types:
+      "Check": "चेक"
+      "Credit card": "क्रेडिट कार्ड"
+      "Purchase order": "क्रय आदेश"
+    check:
+      routing_number: "# रूटिंग नंबर"
+      account_number: "# खाता संख्या"
+    cc:
+      cc_number: "सीसी संख्या"
+      expiration_date: "समाप्ति तिथि"
+    po:
+      po_number: "पीओ नंबर"
+
+  activerecord:
+    errors:
+      messages:
+        inclusion: "में सूचीबद्ध नहीं है"
+        blank: "खाली नहीं हो सकता"
+  errors:
+    template:
+      body: "त्रुटियों ने इस आदेश को सहेजे जाने से रोक दिया:"
+      header:
+        one: "1 त्रुटि ने इस आदेश को सहेजे जाने से रोक दिया:"
+        other: "%{count} त्रुटियों ने इस आदेश को सहेजे जाने से रोक दिया: %{model} se guarde"
+
+  # activerecord:
+  #   models:
+  #     order:
+  #       attributes: "pedido"
+  #     order:
+  #       address: "Direcci&oacute;n"
+  #       name: "Nombre"
+  #       email: "E-mail"
+  #       pay_type: "Forma de pago"
+
+  thanks: "आपके ऑर्डर के लिए धन्यवाद"
