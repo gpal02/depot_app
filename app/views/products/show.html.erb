@@ -14,23 +14,14 @@
   </div>
   
   <div class="mx-auto py-3 px-5">
-    <h2>Review</h2>
-    <%= render @product.reviews %>
+    <h2 class="font-bold text-lg mb-3">Review</h2>
+    <div class="border p-2">
+      <%= render @product.reviews %>
+    </div>
+    <hr class="mt-6 mb-3">
+    <h2 class="font-bold text-lg mb-3">Add a review:</h2>
+    <%= render 'reviews/form' %>
 
-    <h2>Add a review:</h2>
-    <%= form_with model: [ @product, @product.reviews.build ] do |form| %>
-      <div class="">
-        <%= form.label :reviewer %><br>
-        <%= form.text_field :reviewer %>
-      </div class="">
-      <div class="">
-        <%= form.label :review %><br>
-        <%= form.text_area :review %>
-      </div class="">
-      <div class="">
-        <%= form.submit %>
-      </div class="">
-    <% end %>
   </div>
 
 </div>

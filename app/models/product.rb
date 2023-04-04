@@ -4,8 +4,8 @@ class Product < ApplicationRecord
   
   before_destroy :ensure_not_referenced_by_any_line_item
   
-  validates :reviewer, presence: true
-  validates :review, presence: true, length: { minimum: 10 }
+  # validates :reviewer, presence: true
+  # validates :review, presence: true, length: { minimum: 10 }
   
   validates :title, :description, :image_url, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }

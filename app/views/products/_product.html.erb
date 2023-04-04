@@ -1,21 +1,21 @@
 <div id="<%= dom_id product %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+    <strong class="block font-medium mb-1 font-bold text-lg mb-3">Title:</strong>
     <%= product.title %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
+    <strong class="block font-medium mb-1 font-bold text-lg mb-3">Description:</strong>
     <%= truncate(strip_tags(product.description), length: 10000) %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Image url:</strong>
+    <strong class="block font-medium mb-1 font-bold text-lg mb-3">Image url:</strong>
     <%= product.image_url %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
+    <strong class="block font-medium mb-1 font-bold text-lg mb-3">Price:</strong>
     <%= product.price %>
   </p>
 

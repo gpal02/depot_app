@@ -1,13 +1,13 @@
 <%= form_with model: [ @product, @product.reviews.build ] do |form| %>
   <div class="">
-    <%= form.label :reviewer %><br>
-    <%= form.text_field :reviewer %>
-  </div class="">
+    <%= form.label :reviewer, class: "font-bold text-lg mb-3" %><br>
+    <%= form.text_field :reviewer, class: "rounded-lg" %>
+  </div>
   <div class="">
-    <%= form.label :review %><br>
-    <%= form.text_area :review %>
-  </div class="">
+    <%= form.label :review, class: "font-bold text-lg mb-3" %><br>
+    <%= form.text_area :review, class: "rounded-lg w-full" %>
+  </div>
   <div class="">
-    <%= form.submit %>
-  </div class="">
+    <%= form.submit "Review", class: "rounded-lg py-2 px-4 bg-green-600 inline-block font-medium" %>
+  </div>
 <% end %>
